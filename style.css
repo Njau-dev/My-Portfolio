@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --accent-color: #f0f0f0;
+    --text-color: #333333;
+    --background-color: #ffffff;
+
+    --font-primary: "Montserrat", sans-serif;
+    --font-size-base: 16px;
+    --font-size-heading: 3rem;
+    --font-size-subheading: 1.75rem;
+    --font-size-text: 1rem;
+
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+}
+
+
+h1,
+h2,
+h3 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: var(--font-size-heading);
+}
+
+h2 {
+    font-size: var(--font-size-subheading);
+}
+
+a {
+    color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 10px;
+    border: none;
+    padding: 1rem 2rem;
+}
+
+/* banner section */
+.banner {
+    display: grid;
+    grid-template-columns: max-content;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner-img {
+    background-image: url(assets/banner-portfolio.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+
+    width: 100%;
+    height: 100%;
+    filter: grayscale();
+    transition: all ease-in-out 0.5s;
+
+    /* padding-right: 30px; */
+    /* border-right: 2px solid var(--primary-color); */
+}
+
+.banner-img:hover {
+    filter: grayscale(0);
+}
+
+.right-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: 2px solid var(--primary-color);
+
+}
+
+
+
+/* Responsiveness */
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-heading: 2rem;
+        --font-size-subheading: 1.5rem;
+        --font-size-text: 0.9rem;
+    }
+
+    /* Switches to a single column */
+
+    .banner {
+        grid-template-columns: 1fr;
+        grid-template-rows: 35% 65%;
+        gap: 1rem;
+    }
+
+    .banner-img {
+        height: 100%;
+
+    }
+}
+
+
+/* medium screens */
+
+@media (min-width: 1200px) {
+    .banner {
+        grid-template-columns: 1fr 1.5fr;
+
+    }
+
+    .banner-img {
+        background-position: left;
+    }
+}
